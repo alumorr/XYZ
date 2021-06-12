@@ -870,7 +870,7 @@ function getRandomArrayElements(arr, count) {
   }
   return shuffled.slice(min);
 }
-function getAuthorShareCode(url = "http://cdn.annnibb.me/eb6fdc36b281b7d5eabf33396c2683a2.json") {
+function getAuthorShareCode() {
   return new Promise(async resolve => {
     const options = {
       "url": `${url}?${new Date()}`,
