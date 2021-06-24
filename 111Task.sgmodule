@@ -11,7 +11,7 @@
 京东汽车 = type=cron,cronexp="10 7 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_car.js
 京东汽车兑换 = type=cron,cronexp="0 0 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_car_exchange.js
 签到领现金 = type=cron,cronexp="2 0-23/4 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_cash.js
-京喜财富岛 = type=cron,cronexp="5 8,13,19 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_cfd.js
+京喜财富岛 = type=cron,cronexp="5 * * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_cfd.js
 摇京豆 = type=cron,cronexp="5 0,23 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_club_lottery.js
 crazyJoy任务 = type=cron,cronexp="10 9 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_crazy_joy.js
 监控crazyJoy分红 = type=cron,cronexp="10 12 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_crazy_joy_bonus.js
@@ -38,8 +38,8 @@ crazyJoy挂机 = type=cron,cronexp="0-59/28 * * * *",wake-system=1,timeout=20,sc
 宠汪汪助力获取Token = type=http-request,pattern=^https:\/\/draw\.jdfcloud\.com(\/mirror)?\/\/api\/user\/user\/detail\?openId=, max-size=0, script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_joy_run.js
 宠汪汪偷好友积分与狗粮 = type=cron,cronexp="10 0-21/3 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_joy_steal.js
 京喜领88元红包 = type=cron,cronexp="4 10 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_jxlhb.js
-京喜牧场 = type=cron,cronexp="20 0-23/3 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_jxmc.js
-京喜农场 = type=cron,cronexp="0 9,12,18 * * *",timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_jxnc.js
+京喜牧场 = type=cron,cronexp="20 0-23/2 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_jxmc.js
+京喜农场 = type=cron,cronexp="0 0-23/1 * * *",timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_jxnc.js
 京东快递签到 = type=cron,cronexp="10 0 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_kd.js
 京东直播 = type=cron,cronexp="10-20/5 12 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_live.js
 超级直播间红包雨 = type=cron,cronexp="0,30 0-23/1 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_live_redrain.js
