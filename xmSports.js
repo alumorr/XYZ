@@ -1,4 +1,8 @@
 /*
+ * @Date: 2020-11-01 13:43:28
+ * @Last Modified time: 2021-4-22 13:43:28
+ */
+/*
 小米运动修改微信支付宝运动步数
 APP Store下载小米运动APP
 登入小米运动(登录方式必须是手机号码+密码(没有就用手机号码注册),下面的第三方账号(小米账号,Apple,微信)授权登录不行)
@@ -6,7 +10,22 @@ APP Store下载小米运动APP
 小米运动只要不退出登录，就会自动获取新的token,即永久有效
 [MITM]
 hostname = account.huami.com
-
+Surge
+[Script]
+小米运动 = type=cron,cronexp="15 17 * * *",wake-system=1,timeout=3600,script-path=xmSports.js
+小米运动获取Token = type=http-response,pattern=^https:\/\/account\.huami\.com\/v2\/client\/login, requires-body=1, max-size=0, script-path=backUp/xmSports.js
+圈X
+[task_local]
+# 小米运动
+15 17 * * * xmSports.js, tag=小米运动, img-url=https://raw.githubusercontent.com/58xinian/icon/master/xmyd.png, enabled=true
+[rewrite_local]
+# 小米运动获取Token
+^https:\/\/account\.huami\.com\/v2\/client\/login url script-response-body xmSports.js
+Loon
+[Script]
+cron "15 17 * * *" script-path=xmSports.js, tag=小米运动
+http-response ^https:\/\/account\.huami\.com\/v2\/client\/login script-path=xmSports.js, requires-body=true, timeout=3600, tag=小米运动获取Token
+ */
 
 const $ = new Env('小米运动');
 const isRequest = typeof $request != "undefined"
