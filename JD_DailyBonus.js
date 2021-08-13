@@ -97,7 +97,7 @@ var DeleteCookie = false; //是否清除所有Cookie, true则开启.
 
 var boxdis = false; //是否开启自动禁用, false则关闭. 脚本运行崩溃时(如VPN断连), 下次运行时将自动禁用相关崩溃接口(仅部分接口启用), 崩溃时可能会误禁用正常接口. (该选项仅适用于QX,Surge,Loon)
 
-var ReDis = true; //是否移除所有禁用列表, true则开启. 适用于触发自动禁用后, 需要再次启用接口的情况. (该选项仅适用于QX,Surge,Loon)
+var ReDis = false; //是否移除所有禁用列表, true则开启. 适用于触发自动禁用后, 需要再次启用接口的情况. (该选项仅适用于QX,Surge,Loon)
 
 var out = 0; //接口超时退出, 用于可能发生的网络不稳定, 0则关闭. 如QX日志出现大量"JS Context timeout"后脚本中断时, 建议填写6000
 
@@ -1793,9 +1793,11 @@ function nobyda() {
     if (isNode) {
       const request = require('request');
       const fs = require("fs");
+      const path = require("path");
       return ({
         request,
-        fs
+        fs,
+        path
       })
     } else {
       return (null)
@@ -1851,11 +1853,12 @@ function nobyda() {
     if (isSurge) return $persistentStore.write(value, key)
     if (isNode) {
       try {
-        if (!node.fs.existsSync(NodeSet)) node.fs.writeFileSync(NodeSet, JSON.stringify({}));
-        const dataValue = JSON.parse(node.fs.readFileSync(NodeSet));
+        if (!node.fs.existsSync(node.path.resolve(__dirname, NodeSet)))
+          node.fs.writeFileSync(node.path.resolve(__dirname, NodeSet), JSON.stringify({}));
+        const dataValue = JSON.parse(node.fs.readFileSync(node.path.resolve(__dirname, NodeSet)));
         if (value) dataValue[key] = value;
         if (!value) delete dataValue[key];
-        return node.fs.writeFileSync(NodeSet, JSON.stringify(dataValue));
+        return node.fs.writeFileSync(node.path.resolve(__dirname, NodeSet), JSON.stringify(dataValue));
       } catch (er) {
         return AnError('Node.js持久化写入', null, er);
       }
@@ -1875,8 +1878,8 @@ function nobyda() {
     if (isSurge) return $persistentStore.read(key)
     if (isNode) {
       try {
-        if (!node.fs.existsSync(NodeSet)) return null;
-        const dataValue = JSON.parse(node.fs.readFileSync(NodeSet))
+        if (!node.fs.existsSync(node.path.resolve(__dirname, NodeSet))) return null;
+        const dataValue = JSON.parse(node.fs.readFileSync(node.path.resolve(__dirname, NodeSet)))
         return dataValue[key]
       } catch (er) {
         return AnError('Node.js持久化读取', null, er)
