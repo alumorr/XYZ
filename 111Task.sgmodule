@@ -63,6 +63,8 @@
 全民抢京豆 = type=cron,cronexp="17 9 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_help_grapbean.js
 燃动夏季下注 = type=cron,cronexp="11 12,20 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_summer_movement_bet.js
 特务Zx佳沛 = type=cron,cronexp="14 14,17 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_productZ4Brand.js
+jd_golden_machine = type=cron,cronexp="14 14,17 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_golden_machine.js
+jd_appliances = type=cron,cronexp="14 14,17 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_appliances.js
 
 [MITM]
 hostname = %APPEND% me-api.jd.com, draw.jdfcloud.com, jdjoy.jd.com, account.huami.com
