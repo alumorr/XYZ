@@ -66,7 +66,6 @@
 特务Zx佳沛 = type=cron,cronexp="14 14,17 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_productZ4Brand.js
 王者荣耀 = type=cron,cronexp="23 8,9 22-31,1-5 8,9 *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_king.js
 jd_appliances = type=cron,cronexp="16 14,17 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_appliances.js
-jd_decompression = type=cron,cronexp="17 14,17 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_decompression.js
 jd_industryLottery = type=cron,cronexp="10 7 17,18 8 *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_industryLottery.js
 
 [MITM]
