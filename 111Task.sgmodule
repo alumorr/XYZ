@@ -71,7 +71,7 @@ jd_star_shop = type=cron,cronexp="12 19 19-30 9 *",wake-system=1,timeout=3600,sc
 jd_ddworld = type=cron,cronexp="14 14,17,20 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_ddworld.js
 jd_film_museum = type=cron,cronexp="23 15 13-26 9 *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_film_museum.js
 jd_decompression = type=cron,cronexp="5 6,18 1-16,21-30 9,10 *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_decompression.js
-jd_honour = type=cron,cronexp="5 10 26-30,1-15 9,10 *",wake-system=1,timeout=3600,script-path=hhttps://raw.githubusercontent.com/alumorr/XYZ/main/jd_honour.js
+jd_honour = type=cron,cronexp="5 10 26-30,1-15 9,10 *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_honour.js
 
 [MITM]
 hostname = %APPEND% me-api.jd.com, draw.jdfcloud.com, jdjoy.jd.com, account.huami.com
