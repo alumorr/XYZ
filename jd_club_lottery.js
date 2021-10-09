@@ -92,7 +92,7 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
       $.assigFirends = $.assigFirends.concat({
         "encryptAssignmentId": $.assigFirends[0] && $.assigFirends[0]['encryptAssignmentId'],
         "assignmentType": 2,
-        "itemId": "SZm_olqSxIOtH97BATGmKoWraLaw",
+        "itemId": "000",
       })
       for (let item of $.assigFirends || []) {
         if (item['encryptAssignmentId'] && item['assignmentType'] && item['itemId']) {
