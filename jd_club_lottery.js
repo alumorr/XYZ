@@ -91,7 +91,7 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
     if ($.canHelp && $.activityId) {
       $.assigFirends = $.assigFirends.concat({
         "encryptAssignmentId": $.assigFirends[0] && $.assigFirends[0]['encryptAssignmentId'],
-        "assignmentType": 2,
+        "assignmentType": 1,
         "itemId": "000",
       })
       for (let item of $.assigFirends || []) {
