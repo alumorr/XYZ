@@ -29,11 +29,11 @@ let UA = '',uuid = '';
         return;
     }
     console.log(`注意：助力第一个CK和脚本内置作者助力码，介意勿跑，等待10秒`);
-    await $.wait(10000);
+    await $.wait(1);
     let res = [];
-    try{res = await getAuthorShareCode('https://raw.githubusercontent.com/lsh26/share_code/main/city.json');}catch (e) {}
+    try{res = await getAuthorShareCode('https://');}catch (e) {}
     if(!res){
-        try{res = await getAuthorShareCode('https://gitee.com/star267/share-code/raw/master/city.json');}catch (e) {}
+        try{res = await getAuthorShareCode('https://');}catch (e) {}
         if(!res){res = [];}
     }
     if(res.length > 0){
