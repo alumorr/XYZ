@@ -49,7 +49,7 @@
 京东金融养猪猪 = type=cron,cronexp="12 0-23/6 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_pigPet.js
 京喜工厂 = type=cron,cronexp="10 * * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_dreamFactory.js
 京喜工厂开团 = type=cron,cronexp="25 0 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/star_dreamFactory_tuan.js
-京喜牧场 = type=cron,cronexp="20 0-23/2 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_jxmc.js
+京喜牧场 = type=cron,cronexp="19 0-23/1 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_jxmc.js
 京喜农场
 京喜财富岛
 京东极速版红包 = type=cron,cronexp="20 0,12,22 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_speed_redpocke.js
