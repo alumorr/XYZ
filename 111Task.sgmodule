@@ -67,7 +67,7 @@ jd_ddworld = type=cron,cronexp="24 0,12,20 * * *",wake-system=1,timeout=3600,scr
 jd_red = type=cron,cronexp="0 0,12 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_red.js
 jd_city = type=cron,cronexp="27 0,12,20 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_city.js
 限时抢京豆 = type=cron,cronexp="0 0,12,22 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_xsqjd.js
-城城领现金抽奖 = type=cron,cronexp="0 2,4 30 10 *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_city.js
+城城领现金抽奖 = type=cron,cronexp="0 2,4 30 10 *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_city_lottery.js
 抢京豆 = type=cron,cronexp="0 0,1,8 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_qjd.js
 
 [MITM]
