@@ -67,12 +67,15 @@ let autoCodeList = []
         $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1]);
         for (let j = 0; j < $.newShareCodes.length && $.canHelp; j++) {
             let code = $.newShareCodes[j];
-            if(code[2] && code[2] ===  $.UserName){
+            if(code[2] && code[2] ===  $.UserName || !code[3]){
                 //不助力自己
                 continue;
             }else {
                 console.log(`【抢京豆】${$.UserName} 去助力账号 ${code[2]}`);
-                await help(code[0], code[1]);
+                let helpInfo = await help(code[0], code[1]);
+                if(helpInfo && helpInfo.data && helpInfo.data.respCode === 'SG215'){
+                    code[3] = false;
+                }
                 await $.wait(2000);
             }
         }
@@ -87,10 +90,10 @@ async function main() {
     await getUserInfo()
 }
 
-function getAuthorShareCode(url = "https://") {
+function getAuthorShareCode(url) {
     return new Promise(resolve => {
         const options = {
-            url: `${url}?${new Date()}`, "timeout": 10000, headers: {
+            url: `${url}?${new Date()}`, "timeout": 1, headers: {
                 "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/87.0.4280.88"
             }
         };
@@ -193,7 +196,7 @@ function getUserInfo() {
                                 //     await help(shareCode, groupCode, 1)
                                 // }
                                 console.log(`\n京东账号 ${$.nickName || $.UserName} 抢京豆邀请码：${shareCode}\n`);
-                                $.newShareCodes.push([shareCode, groupCode,$.UserName])
+                                $.newShareCodes.push([shareCode, groupCode,$.UserName,true])
                             }
                         }else{
                             console.log(JSON.stringify(data));
@@ -223,7 +226,7 @@ function hitGroup() {
                         if (data.data.respCode === "SG150") {
                             let {shareCode, groupCode} = data.data.signGroupMain
                             if (shareCode) {
-                                $.newShareCodes.push([shareCode, groupCode,$.UserName]);
+                                $.newShareCodes.push([shareCode, groupCode,$.UserName,true]);
                                 console.log('开团成功')
                                 console.log(`\n京东账号${$.index} ${$.nickName || $.UserName} 抢京豆邀请码：${shareCode}\n`);
                                 //await help(shareCode, groupCode, 1)
