@@ -5,7 +5,7 @@ cron 0 0,12 * * * https://raw.githubusercontent.com/star261/jd/main/scripts/jd_r
 * */
 const $ = new Env('双11红包');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
-const flCode = $.isNode() ? (process.env.FLCODE ? process.env.FLCODE : '0'):'0';
+const flCode = $.isNode() ? (process.env.FLCODE ? process.env.FLCODE : ' '):' ';
 let cookiesArr = [];
 if ($.isNode()) {
     Object.keys(jdCookieNode).forEach((item) => {
@@ -103,9 +103,9 @@ function mainInfo() {
                     let res = $.toObj(data,data);
                     if(typeof res == 'object'){
                         if(res.code == 0 && res.data && res.data.shareUrl){
-                           // $.shareCode = res.data.shareUrl.match(/$.code\?s=([^&]+)/) && res.data.shareUrl.match(/$.code\?s=([^&]+)/)[1] || ''
-                            //$.shareCode = res.data.shareUrl.match(/$.code\?s=([^&]+)/) && res.data.shareUrl.match(/$.code\?s=([^&]+)/)[1] || ''
-                            //console.log('助力码:'+$.shareCode)
+                            // $.shareCode = res.data.shareUrl.match(/$.code\?s=([^&]+)/) && res.data.shareUrl.match(/$.code\?s=([^&]+)/)[1] || ''
+                            $.shareCode = res.data.shareUrl.match(/\?s=([^&]+)/) && res.data.shareUrl.match(/\?s=([^&]+)/)[1] || ''
+                            console.log('助力码:'+$.shareCode)
                         }
                     }else{
                         console.log(data)
