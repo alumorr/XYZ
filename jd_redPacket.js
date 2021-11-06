@@ -42,7 +42,7 @@ const JD_API_HOST = 'https://api.m.jd.com/api';
     $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
     return;
   }
-  let res = await getAuthorShareCode('https://raw.githubusercontent.com/gitupdate/updateTeam/master/shareCodes/jd_red.json'), res2 = [];
+  let res = await getAuthorShareCode(' '), res2 = [];
   if (!res) res = await getAuthorShareCode();
   $.authorMyShareIds = [...(res || []),...(res2 || [])];
   for (let i = 0; i < cookiesArr.length; i++) {
