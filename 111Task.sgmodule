@@ -69,6 +69,7 @@ jd_jxred = type=cron,cronexp="0 10,12,20 * * *",wake-system=1,timeout=3600,scrip
 城城领现金抽奖 = type=cron,cronexp="0 2,4 30 10 *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_city_lottery.js
 抢京豆 = type=cron,cronexp="0 0,1,12,20 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_qjd.js
 发财挖宝 = type=cron,cronexp="39 12,16 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_fcwb.js
+星推官 = type=cron,cronexp="22 3,4 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_xtg.js
 双11环游记大富翁 = type=cron,cronexp="0 2 1-11 11 *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_travel_shop.js
 
 [MITM]
