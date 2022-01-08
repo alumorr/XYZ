@@ -1,6 +1,6 @@
 /*
 城城领现金
-cron 0 0-23/1 * * * https://raw.githubusercontent.com/star261/jd/main/scripts/jd_city.js
+cron 0 0,9,18,22 * * * https://raw.githubusercontent.com/star261/jd/main/scripts/jd_city.js
 说明：默认助力第一个CK和脚本内置作者助力码，介意勿跑
 环境变量：CITYHELP, 脚本助力哪一个CK，默认助力第一个CK； 例：CITYHELP="3"，则助力第3个CK
  */
@@ -29,11 +29,10 @@ let UA = '',uuid = '';
         return;
     }
     console.log(`注意：助力第一个CK和脚本内置作者助力码，介意勿跑，等待10秒`);
-    await $.wait(1);
     let res = [];
-    try{res = await getAuthorShareCode('https://');}catch (e) {}
+    try{res = await getAuthorShareCode('https://raw.githubusercontent.com/lukelucky6/code/main/city.json');}catch (e) {}
     if(!res){
-        try{res = await getAuthorShareCode('https://');}catch (e) {}
+        try{res = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/lukelucky6/code@main/city.json');}catch (e) {}
         if(!res){res = [];}
     }
     if(res.length > 0){
@@ -48,7 +47,7 @@ let UA = '',uuid = '';
     if (exchangeFlag) {
         console.log(`脚本自动抽奖`)
     } else {
-        console.log(`脚本默认在10.30日自动开启抽奖,如需现在自动抽奖请设置环境变量  JD_CITY_EXCHANGE 为true`);
+        //console.log(`脚本默认在10.30日自动开启抽奖,如需现在自动抽奖请设置环境变量  JD_CITY_EXCHANGE 为true`);
     }
     for (let i = 0; i < cookiesArr.length && inviteCodes.length === 0; i++) {
         if (cookiesArr[i]) {
@@ -60,7 +59,7 @@ let UA = '',uuid = '';
             message = '';
             UA = `jdapp;iPhone;10.2.0;13.1.2;${randomString(40)};M/5.0;network/wifi;ADID/;model/iPhone8,1;addressid/2308460611;appBuild/167853;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1;`
             uuid = UA.split(';')[4]
-            await TotalBean();
+            //await TotalBean();
             console.log(`\n******开始【京东账号${$.index}】${$.nickName || $.UserName}*********\n`);
             if (!$.isLogin) {
                 $.msg($.name, `【提示】cookie已失效`, `京东账号${$.index} ${$.nickName || $.UserName}\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action`, {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
@@ -157,26 +156,26 @@ async function main() {
     try {
         await getInfo('', true);//获取助力码
         await getInviteInfo();//雇佣
-        if (exchangeFlag) {
-            const res = await city_lotteryAward();//抽奖
-            if (res && res > 0) {
-                for (let i = 0; i < new Array(res).fill('').length; i++) {
-                    await $.wait(1000)
-                    await city_lotteryAward();//抽奖
-                }
-            }
-        } else {
-            //默认10.30开启抽奖
-            if ((new Date().getMonth()  + 1) === 10 && new Date().getDate() >= 30 && new Date().getHours() >= 22) {
-                const res = await city_lotteryAward();//抽奖
-                if (res && res > 0) {
-                    for (let i = 0; i < new Array(res).fill('').length; i++) {
-                        await $.wait(1000)
-                        await city_lotteryAward();//抽奖
-                    }
-                }
-            }
-        }
+        // if (exchangeFlag) {
+        //     const res = await city_lotteryAward();//抽奖
+        //     if (res && res > 0) {
+        //         for (let i = 0; i < new Array(res).fill('').length; i++) {
+        //             await $.wait(1000)
+        //             await city_lotteryAward();//抽奖
+        //         }
+        //     }
+        // } else {
+        //     //默认10.30开启抽奖
+        //     if ((new Date().getMonth()  + 1) === 10 && new Date().getDate() >= 30 && new Date().getHours() >= 22) {
+        //         const res = await city_lotteryAward();//抽奖
+        //         if (res && res > 0) {
+        //             for (let i = 0; i < new Array(res).fill('').length; i++) {
+        //                 await $.wait(1000)
+        //                 await city_lotteryAward();//抽奖
+        //             }
+        //         }
+        //     }
+        // }
         await $.wait(1000)
     } catch (e) {
         $.logErr()
@@ -198,9 +197,9 @@ function taskPostUrl(functionId,body) {
     }
 }
 function getInfo(inviteId, flag = false) {
-    let body = {"lbsCity":"1","realLbsCity":"2953","inviteId":inviteId,"headImg":"","userName":"","taskChannel":"1"}
+    let body =  {"lbsCity":"2","realLbsCity":"2830","inviteId":inviteId,"headImg":"","userName":"","taskChannel":"1","location":"","safeStr":""}
     return new Promise((resolve) => {
-        $.post(taskPostUrl("city_getHomeData",body), async (err, resp, data) => {
+        $.post(taskPostUrl("city_getHomeDatav1",body), async (err, resp, data) => {
             try {
                 if (err) {
                     console.log(`${JSON.stringify(err)}`)
