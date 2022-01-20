@@ -62,7 +62,6 @@
 会场红包雨 = type=cron,cronexp="21 20,21 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_hc_rain.js
 年货节签到 = type=cron,cronexp="23 0,8 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_nh_sign.js
 会场红包 = type=cron,cronexp="0 0,20,23,12 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_nhs_red.js
-城城领现金 = type=cron,cronexp="0 0,9,18,22 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_city.js
 并发会场红包 = type=cron,cronexp="0 0,10,20 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_hcb_red.js
 萌虎摇摇乐 = type=cron,cronexp="0 0,10,20 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_mhyyl.js
 萌虎摇摇乐送卡 = type=cron,cronexp="0 0 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_mhyyl_sendCard.js
