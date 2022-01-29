@@ -6,7 +6,7 @@ https://raw.githubusercontent.com/star261/jd/main/scripts/jd_mhyyl_sendCard.js
 * */
 const $ = new Env('萌虎摇摇乐送卡');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
-const SSCK = 2.isNode() ? (process.env.SSCK ? process.env.SSCK : `***`):`***`;
+const SSCK = $.isNode() ? (process.env.SSCK ? process.env.SSCK : `***`):`2`;
 let cookiesArr = [];
 let needKardInfo = {};
 let haveCardInfo = {};
