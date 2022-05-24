@@ -53,6 +53,7 @@
 特务Zx佳沛 = type=cron,cronexp="23 8,9,10,18,20 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_productZ4Brand.js
 发财挖宝 = type=cron,cronexp="39 0,12,16 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_fcwb.js
 粉丝互动 = type=cron,cronexp="40 1 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_fan.js
+618大富翁 = type=cron,cronexp="1 0 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_618dfw.js
 
 [MITM]
 hostname = %APPEND% me-api.jd.com, draw.jdfcloud.com, jdjoy.jd.com, account.huami.com
