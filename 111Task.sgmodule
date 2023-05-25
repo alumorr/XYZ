@@ -7,12 +7,12 @@
 京东资产变动通知 = type=cron,cronexp="2 9 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_bean_change.js
 领京豆额外奖励
 签到领现金
-摇京豆 = type=cron,cronexp="15 0,23 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_club_lottery.js
+摇京豆
 天天提鹅
 京东赚赚
-领金贴 = type=cron,cronexp="10 0 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_jin_tie.js
+领金贴
 获取互助码 = type=cron,cronexp="20 13 * * 6",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_get_share_code.js
-金榜创造营 = type=cron,cronexp="13 0,22 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_gold_creator.js
+金榜创造营
 京东种豆得豆 = type=cron,cronexp="0,30 7-23/1 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_plantBean.js
 东东农场 = type=cron,cronexp="25 1-22/1 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_fruit.js
 东东工厂
@@ -51,7 +51,7 @@
 特务Zx佳沛
 特务集卡
 发财挖宝
-粉丝互动 = type=cron,cronexp="40 1 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/jd_fan.js
+粉丝互动
 
 [MITM]
 hostname = %APPEND% me-api.jd.com, draw.jdfcloud.com, jdjoy.jd.com, account.huami.com
