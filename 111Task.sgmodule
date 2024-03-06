@@ -53,5 +53,7 @@
 发财挖宝
 粉丝互动
 
+小米运动 = type=cron,cronexp="35 17 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/MIstep.js
+小米运动获取Token = type=http-response,pattern=^https:\/\/account\.huami\.com\/v2\/client\/login, requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/alumorr/XYZ/main/MIstep.js
 [MITM]
 hostname = %APPEND% me-api.jd.com, draw.jdfcloud.com, jdjoy.jd.com, account.huami.com
